@@ -1,6 +1,9 @@
 import './App.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import brasCubasImg from './assets/bras_cubas.jpeg'
 import Capa from './Capa'
+import SeletorCapitulos from './SeletorCapitulos'
+
 function App() {
 
   const informacoesLivros = {
@@ -14,6 +17,7 @@ function App() {
   return(
     <>
       <Capa imagemCapa={informacoesLivros.capa} textoAlternativo={informacoesLivros.textoAlternativo} />
+      <SeletorCapitulos/>
     </>
   )
 }
