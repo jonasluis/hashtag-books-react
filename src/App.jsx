@@ -17,7 +17,7 @@ function App() {
   return(
     <>
       <Capa imagemCapa={informacoesLivros.capa} textoAlternativo={informacoesLivros.textoAlternativo} />
-      <SeletorCapitulos/>
+      <SeletorCapitulos capituloAtual='1'/>
     </>
   )
 }
