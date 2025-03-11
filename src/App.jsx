@@ -47,7 +47,7 @@ const tagAudio = useRef(null)
   return(
     <>
       <Capa imagemCapa={informacoesLivros.capa} textoAlternativo={informacoesLivros.textoAlternativo} faixa={informacoesLivros.capitulos[faixaAtual]}/>
-      <SeletorCapitulos capituloAtual='1'/>
+      <SeletorCapitulos capituloAtual={faixaAtual + 1}/>
       <GerenciadorFaixa faixa={informacoesLivros.capitulos[faixaAtual]} referencia={tagAudio}/>
       <BotoesControle 
       taTocando={taTocando} 
