@@ -20,13 +20,31 @@ function App() {
     textoAlternativo: 'Capa do livro Memórias Póstumas de Brás Cubas',
   }
 
+  const tocarFaixa = () => {
+    definirTaTocando(true);
+  }
+
+  const pausarFaixa = () => {
+    definirTaTocando(false);
+  }
+
+  const tocarOuPausarFaixa = () => {
+    if(taTocando){
+      pausarFaixa();
+    } else {
+      tocarFaixa();
+    }
+  }
   
 
   return(
     <>
       <Capa imagemCapa={informacoesLivros.capa} textoAlternativo={informacoesLivros.textoAlternativo} />
       <SeletorCapitulos capituloAtual='1'/>
-      <BotoesControle taTocando={taTocando} definirTaTocando={definirTaTocando}/>
+      <BotoesControle 
+      taTocando={taTocando} 
+      tocarOuPausarFaixa={tocarOuPausarFaixa}
+      />
     </>
   )
 }
