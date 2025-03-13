@@ -42,8 +42,23 @@ const tagAudio = useRef(null)
       tocarFaixa();
     }
   }
-  
 
+  const avancarFaixa = () => {
+    if(informacoesLivros.totalCapitulos === faixaAtual + 1){
+      definirFaixaAtual(0);
+    } else{
+      definirFaixaAtual(faixaAtual + 1);
+    }
+  }
+
+  const voltarFaixa = () => {
+    if(faixaAtual === 0){
+      definirFaixaAtual(informacoesLivros.totalCapitulos - 1);
+    } else{
+      definirFaixaAtual(faixaAtual - 1);
+    }
+  }
+  
   return(
     <>
       <Capa imagemCapa={informacoesLivros.capa} textoAlternativo={informacoesLivros.textoAlternativo} faixa={informacoesLivros.capitulos[faixaAtual]}/>
@@ -52,6 +67,8 @@ const tagAudio = useRef(null)
       <BotoesControle 
       taTocando={taTocando} 
       tocarOuPausarFaixa={tocarOuPausarFaixa}
+      avancarFaixa={avancarFaixa}
+      voltarFaixa={voltarFaixa}
       />
     </>
   )
